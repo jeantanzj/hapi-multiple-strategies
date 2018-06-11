@@ -1,0 +1,15 @@
+{
+  "name": "hapi-plugin-tutorial",
+  "version": "1.0.0",
+  "description": "Simplest plugin",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "boom": "^7.2.0",
+    "hapi": "^17.5.1"
+  }
+}
