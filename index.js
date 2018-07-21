@@ -81,8 +81,8 @@ const init = async () => {
         handler: (request, h) => {
             return 'This path is authenticated using f-strategy, t-strategy \
              -- we expect unauthorized, because we cant use the same scheme for multiple strategies. \
-             It will only authenticate using the first one.\
-            If xrw-strategy and t-strategy used different schemes, then they would be tried in order until one succeeeds or all fail.';
+             It will only authenticate using the first one -- f-strategy returns false.\
+            If f-strategy and t-strategy used different schemes, then they would be tried in order until one succeeeds or all fail.';
         },
     });
     server.route({
@@ -95,8 +95,8 @@ const init = async () => {
         },
         handler: (request, h) => {
             return 'This path is authenticated using xrw-strategy, t-strategy \
-             -- we expect unauthorized if we dont supply header X-Requested-With === XmlHttpRequest , because we cant use the same scheme for multiple strategies. \
-             It will only authenticate using the first one.\
+             -- we expect unauthorized if we dont supply header X-Requested-With === XmlHttpRequest, even though t-strategy returns true. \
+             It will only authenticate using the first one. \
             If xrw-strategy and t-strategy used different schemes, then they would be tried in order until one succeeeds or all fail.';
         },
     });
